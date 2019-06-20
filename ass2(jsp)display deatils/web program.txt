@@ -1,0 +1,52 @@
+............employee.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+<form action="EmployeeServlet" method=GET>
+Enter id: <input type="text" name="empno"  "></input>
+<button type="submit" >Submit</button>
+</form>
+</center>
+</body>
+</html>
+
+
+
+...........................employee.jsp
+
+
+<%@page import="com.lti.employee.servlet.Employee"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+Employee employee=(Employee)session.getAttribute("Employee");
+%>
+<center>
+Empno<%=employee.getEmpno()%><br/>
+Ename<%=employee.getEname()%><br/>
+Job<%=employee.getJob()%><br/>
+Mgr<%=employee.getMgr()%><br/>
+Hiredate<%=employee.getHiredate()%><br/>
+Sal<%=employee.getSal()%><br/>
+Comm<%=employee.getComm()%><br/>
+</center>
+</body>
+</html>
+
+
